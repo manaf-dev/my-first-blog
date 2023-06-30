@@ -17,16 +17,14 @@
         You should consider checking our YouTube Channel <a href="https://youtube.com/@techrems">Here</a>.
     </p>
 
-    <article>
-        <time>Published 30-06-2023, 10:00pm</time>
-        <h2><a href="">Our First Post</a></h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed ipsa deleniti, tempora dolorem corrupti quibusdam vel pariatur numquam minima quas consequuntur labore saepe illo cum quo quia tenetur enim corporis.</p>
-    </article>
+    {% for post in posts %}
+        <article>
+            <time>Published: {{ post.published_date }}</time>
+            <h2><a href="">{{ post.title }}</a></h2>
+            <p>{{ post.text|linebreaksbr }}</p>
+        </article>
+        {{ post }}
+    {% endfor %}
 
-    <article>
-        <time>Published 29-06-2023, 10:10pm</time>
-        <h2><a href="">Our Second Post</a></h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed ipsa deleniti, tempora dolorem corrupti quibusdam vel pariatur numquam minima quas consequuntur labore saepe illo cum quo quia tenetur enim corporis.</p>
-    </article>
 </body>
 </html>
